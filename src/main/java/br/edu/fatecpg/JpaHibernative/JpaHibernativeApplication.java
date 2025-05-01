@@ -32,7 +32,7 @@ public class JpaHibernativeApplication implements ApplicationRunner {
 		Scanner scan = new Scanner(System.in);
 		int opt = 0;
 
-		while(opt != 3) {  // Enquanto não escolher sair
+		while(opt != 3) {
 			System.out.println("\n=== MENU ===");
 			System.out.println("1 - Buscar receita por ID");
 			System.out.println("2 - Listar receitas salvas");
@@ -41,7 +41,7 @@ public class JpaHibernativeApplication implements ApplicationRunner {
 
 			try {
 				opt = scan.nextInt();
-				scan.nextLine(); // Limpa o buffer
+				scan.nextLine();
 
 				switch (opt) {
 					case 1:
@@ -88,7 +88,7 @@ public class JpaHibernativeApplication implements ApplicationRunner {
 		}
 	}
 
-	@Transactional  // Adicione esta anotação
+	@Transactional
 	public void listarReceitasSalvas() {
 		List<Recipe> receitas = recipeService.listAllRecipes();
 
