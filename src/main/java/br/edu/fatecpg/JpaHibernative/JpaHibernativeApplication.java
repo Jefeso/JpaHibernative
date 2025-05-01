@@ -98,7 +98,6 @@ public class JpaHibernativeApplication implements ApplicationRunner {
 			System.out.println("\n=== RECEITAS SALVAS ===");
 			receitas.forEach(receita -> {
 				System.out.println("\n--------------------------------");
-				// Carrega explicitamente os ingredientes
 				Hibernate.initialize(receita.getIngredients());
 				System.out.println(receita);
 				System.out.println("--------------------------------");
